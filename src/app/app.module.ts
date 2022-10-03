@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { contadorReducer } from './contador/contador.reducer';
 import { HijoComponent } from './contador/hijo/hijo.component';
@@ -15,7 +17,8 @@ import { NietoComponent } from './contador/nieto/nieto.component';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({contador: contadorReducer})
+    StoreModule.forRoot({contador: contadorReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
