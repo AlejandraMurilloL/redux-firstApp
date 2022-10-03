@@ -12,3 +12,5 @@ export const dividir = createAction(
   '[Hijo Component] Dividir',
   props<{ numero: number }>()
 );
+
+export const resetear = createAction('[Nieto Component] Resetear');
